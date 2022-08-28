@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import styles from './ContactForm.module.css';
 import { nanoid } from 'nanoid';
 import { useAddContactMutation, useFetchContactsQuery } from 'redux/apiSlice';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -72,9 +75,9 @@ const ContactForm = () => {
           required
         />
       </label>
-      <button className={styles.button} type="submit">
+      <Button className={styles.button} type="submit">
         Add contact
-      </button>
+      </Button>
     </form>
   );
 };
