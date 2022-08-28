@@ -18,7 +18,7 @@ const styles = {
 
 export default function UserMenu() {
   const dispatch = useDispatch();
-  const name = useSelector(authSelectors.getUsername);
+  const name = useSelector(authSelectors.getUserName);
 
   return (
     <div style={styles.container}>
