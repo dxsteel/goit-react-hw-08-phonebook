@@ -5,7 +5,7 @@ import authSelectors from 'redux/auth/authSelectors';
 import styles from './Navigation.module.css';
 
 const activeLink = {
-  color: '#E84A5F',
+  color: '#0766FF',
 };
 
 const Navigation = () => {
@@ -17,7 +17,7 @@ const Navigation = () => {
         className={styles.link}
         style={({ isActive }) => (isActive ? activeLink : undefined)}
       >
-        Home
+        HOME
       </NavLink>
       {isLoggedIn && (
         <NavLink
@@ -25,7 +25,7 @@ const Navigation = () => {
           className={styles.link}
           style={({ isActive }) => (isActive ? activeLink : undefined)}
         >
-          Contacts
+          CONTACTS
         </NavLink>
       )}
     </nav>
