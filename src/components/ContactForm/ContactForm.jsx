@@ -6,7 +6,6 @@ import { useAddContactMutation, useFetchContactsQuery } from 'redux/apiSlice';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');

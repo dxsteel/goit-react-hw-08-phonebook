@@ -1,24 +1,5 @@
-// import ContactForm from 'components/ContactForm';
-// import ContactList from 'components/ContactList';
-// import Filter from 'components/Filter';
-
-// export const App = () => {
-//   return (
-//     <div className="container">
-//       <h2 className="container-name">Phonebook</h2>
-//       <ContactForm />
-//       <div>
-//         <h2 className="container-name">Contacts</h2>
-//         <Filter />
-//         <ContactList />
-//       </div>
-//     </div>
-//   );
-// };
-
 import { useEffect, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { Switch } from 'react-router-dom';
 import AppBar from './AppBar';
 import Container from './Container/Container';
 import PrivateRoute from './PrivatRoute';
@@ -49,7 +30,6 @@ export function App() {
           <Routes>
             <Route
               path="/"
-              // exact
               element={
                 <PublicRoute path="/">
                   <HomePage />
@@ -59,7 +39,7 @@ export function App() {
             <Route
               path="/contacts"
               element={
-                <PrivateRoute >
+                <PrivateRoute>
                   <ContactsPage />
                 </PrivateRoute>
               }
@@ -74,17 +54,16 @@ export function App() {
             />
             <Route
               path="/login"
-              // exact
               element={
                 <PublicRoute restricted>
                   <LoginPage />
                 </PublicRoute>
               }
             />
-            <Route path="*" element={<HomePage />}/>
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </Suspense>
       </Container>
-)
+    )
   );
 }

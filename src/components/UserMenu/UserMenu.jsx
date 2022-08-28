@@ -4,7 +4,6 @@ import authOperations from 'redux/auth/authOperations';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 const styles = {
   container: {
     display: 'flex',
@@ -20,12 +19,15 @@ const styles = {
 export default function UserMenu() {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUsername);
-  
 
   return (
     <div style={styles.container}>
       <span style={styles.name}>You are welcome, {name}</span>
-      <Button variant="primary" type="button" onClick={() => dispatch(authOperations.logOut())}>
+      <Button
+        variant="primary"
+        type="button"
+        onClick={() => dispatch(authOperations.logOut())}
+      >
         Log out
       </Button>
     </div>

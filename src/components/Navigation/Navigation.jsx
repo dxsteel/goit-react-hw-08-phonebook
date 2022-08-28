@@ -4,24 +4,24 @@ import { useSelector } from 'react-redux';
 import authSelectors from 'redux/auth/authSelectors';
 import styles from './Navigation.module.css';
 
-
 const activeLink = {
   color: '#E84A5F',
 };
-
 
 const Navigation = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <nav>
-      <NavLink to="/"  className={styles.link}
-          style={({ isActive }) => (isActive ? activeLink : undefined)} >
+      <NavLink
+        to="/"
+        className={styles.link}
+        style={({ isActive }) => (isActive ? activeLink : undefined)}
+      >
         Home
       </NavLink>
       {isLoggedIn && (
         <NavLink
           to="/contacts"
-          // exact
           className={styles.link}
           style={({ isActive }) => (isActive ? activeLink : undefined)}
         >

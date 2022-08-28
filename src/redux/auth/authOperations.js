@@ -16,20 +16,19 @@ export const token = {
 const register = createAsyncThunk('auth/register', async credentials => {
   try {
     const { data } = await axios.post('/users/signup', credentials);
-      token.set(data.token);
-      Notiflix.Notify.success('You successfully signed up!');
+    token.set(data.token);
+    Notiflix.Notify.success('You successfully signed up!');
     return data;
   } catch (error) {
     Notiflix.Notify.failure('Something wrong! please try again!');
   }
 });
 
-
 const logIn = createAsyncThunk('auth/login', async credentials => {
   try {
     const { data } = await axios.post('/users/login', credentials);
-      token.set(data.token);
-      Notiflix.Notify.success(`You successfully logged in!`);
+    token.set(data.token);
+    Notiflix.Notify.success(`You successfully logged in!`);
     return data;
   } catch (error) {
     Notiflix.Notify.failure('Log is failed. Please sign up!');
@@ -38,8 +37,8 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
 
 const logOut = createAsyncThunk('auth/logout', async () => {
   try {
-      await axios.post('/users/logout');
-      Notiflix.Notify.success(`See you later!`);
+    await axios.post('/users/logout');
+    Notiflix.Notify.success(`See you later!`);
     token.unset();
   } catch (error) {
     Notiflix.Notify.failure('Something wrong! please try again!');
@@ -63,7 +62,7 @@ const fetchCurrentUser = createAsyncThunk(
     } catch (error) {
       Notiflix.Notify.failure('Something wrong! please try again!');
     }
-  },
+  }
 );
 
 const operations = {
