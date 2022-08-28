@@ -49,7 +49,7 @@ export function App() {
           <Routes>
             <Route
               path="/"
-              exact
+              // exact
               element={
                 <PublicRoute path="/">
                   <HomePage />
@@ -74,7 +74,7 @@ export function App() {
             />
             <Route
               path="/login"
-              exact
+              // exact
               element={
                 <PublicRoute restricted>
                   <LoginPage />
